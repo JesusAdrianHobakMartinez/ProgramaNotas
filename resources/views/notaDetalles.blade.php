@@ -14,7 +14,7 @@
                 <div class="w-1/3 mx-auto  text-black border-4 border-separate bg-white" >
                     <h1 class="p-3 my-2">Id:<br> {{$nota->id}}</h1>
                     
-                    <h1 class=" px-3 my-2">Asignatura: <br> 
+                    <h1 class=" px-3 my-2">Titulo: <br> 
                         <span class="font-semibold text-2xl text-center">
                         {{$nota->titulo}}
                         </span>
