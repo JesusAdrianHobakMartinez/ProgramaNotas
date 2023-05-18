@@ -25,11 +25,19 @@
                 @foreach ($asignaturas as $asignatura)
                 <tr class="border-black border-4">
 
-                <td class=" border-black border-4 mx-2  bg-white py-2 px-2">{{ $loop->iteration }}</td>
-                <td class=" border-black border-2 mx-2  bg-white py-2 px-2">{{ $asignatura->nombre }}</td>
-                <td class=" border-black border-2 mx-2  bg-white py-2 px-2">{{ $asignatura->clave }}</td>
+                <tr class=" border-black border-4">
+                    <th scope="row" class="px-6 py-4 font-medium border-black border-2">
+                    {{ $asignatura->iteration }}
+                </th>
+                <th class="px-6 py-4 font-medium border-black border-2">
+                    {{ $asignatura->nombre }}
+                </th>
+                <th class="px-6 py-4 font-medium border-black border-2">
+                    {{ $asignatura->clave }}
+                </th>
+
                 <td class=" border-black border-4 mx-2  bg-blue-50 py-2 px-2">
-                    <a href="{{ route('subjects.show', ['id' => $asignatura]) }}">Detalles</a>
+                    <a href="{{ route('asignaturas.show', ['id' => $asignatura]) }}">Detalles</a>
                     
                 </td>
                 </tr>
