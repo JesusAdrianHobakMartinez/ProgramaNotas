@@ -5,19 +5,19 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Asignaturas</title>
+        <title>Materias</title>
     </head>
 
     <body>
-    <div class="text-2xl text-black mx-auto border-4 border-separate" >
+    <div class="text-2xl text-black mx-auto border-6 border-separate" >
             
             <table class = "tabletext-base mx-auto">
             <thead >
                 <tr class=" bg-emerald-500">
 
-                <th class="border-black border-4"> # </th>
-                <th class="border-black border-4">Asignatura</th>
-                <th class="border-black border-4">Clave</th>
+                    <th class="border-red border-2">Asignatura</th>
+                <th class="border-red border-2">Asignatura</th>
+                <th class="border-red border-2">Clave</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +40,10 @@
                 <div class="w-1/4 pb-4 mx-auto px-5 my-10 border-4 border-indigo-50  bg-white rounded-sm">
 
                     <!-- Información -->
-                    <div class="w-full mt-4 bg-lime-100  rounded-md">
-                        <h1 class="text-2xl  text-center font-bold  text-black">Tu carrera es {{$asignatura->ing}}</h1>
-                    </div>  
+
+                    <span class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
+                         Tu carrera es Tu carrera es {{$asignatura->ing}}
+                    </span> 
                 
                 </div>
             </tbody>
