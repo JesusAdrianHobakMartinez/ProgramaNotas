@@ -30,6 +30,7 @@
                         {{ __('Notas') }}
                     </x-nav-link>
                 </div>
+                
 
             </div>
 
