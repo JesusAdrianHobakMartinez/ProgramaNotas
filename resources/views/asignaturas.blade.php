@@ -5,19 +5,19 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Materias</title>
+        <title>Asignaturas</title>
     </head>
 
     <body>
-    <div class="text-2xl text-black mx-auto border-6 border-separate" >
+    <div class="text-2xl text-black mx-auto border-4 border-separate" >
             
             <table class = "tabletext-base mx-auto">
             <thead >
                 <tr class=" bg-emerald-500">
 
-                    <th class="border-red border-2">Asignatura</th>
-                <th class="border-red border-2">Asignatura</th>
-                <th class="border-red border-2">Clave</th>
+                <th class="border-black border-4"> # </th>
+                <th class="border-black border-4">Asignatura</th>
+                <th class="border-black border-4">Clave</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,19 +25,11 @@
                 @foreach ($asignaturas as $asignatura)
                 <tr class="border-black border-4">
 
-                <tr class=" border-black border-4">
-                    <th scope="row" class="px-6 py-4 font-medium border-black border-2">
-                    {{ $asignatura->iteration }}
-                </th>
-                <th class="px-6 py-4 font-medium border-black border-2">
-                    {{ $asignatura->nombre }}
-                </th>
-                <th class="px-6 py-4 font-medium border-black border-2">
-                    {{ $asignatura->clave }}
-                </th>
-
+                <td class=" border-black border-4 mx-2  bg-white py-2 px-2">{{ $loop->iteration }}</td>
+                <td class=" border-black border-2 mx-2  bg-white py-2 px-2">{{ $asignatura->nombre }}</td>
+                <td class=" border-black border-2 mx-2  bg-white py-2 px-2">{{ $asignatura->clave }}</td>
                 <td class=" border-black border-4 mx-2  bg-blue-50 py-2 px-2">
-                    <a href="{{ route('asignaturas.show', ['id' => $asignatura]) }}">Detalles</a>
+                    <a href="{{ route('subjects.show', ['id' => $asignatura]) }}">Detalles</a>
                     
                 </td>
                 </tr>
@@ -48,10 +40,9 @@
                 <div class="w-1/4 pb-4 mx-auto px-5 my-10 border-4 border-indigo-50  bg-white rounded-sm">
 
                     <!-- Información -->
-
-                    <span class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
-                         Tu carrera es Tu carrera es {{$asignatura->ing}}
-                    </span> 
+                    <div class="w-full mt-4 bg-lime-100  rounded-md">
+                        <h1 class="text-2xl  text-center font-bold  text-black">Tu carrera es {{$asignatura->ing}}</h1>
+                    </div>  
                 
                 </div>
             </tbody>

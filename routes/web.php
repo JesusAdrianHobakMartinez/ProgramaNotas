@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; //AGREGUE CONTROLADOR 
+use App\Http\Controllers\UserController; //AGREGUE CONTROLADOR
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\CornellnoteController;
 /*
@@ -34,6 +34,9 @@ Route::get('/asignaturas', [SubjectController::class, 'index'])->middleware(['au
 
 //de esta forma ya puedo pasar datos
 Route::get('/asignaturas/{id}', [SubjectController::class, 'show'])->middleware(['auth', 'verified'])->name('subjects.show');
+Route::post('cornellnote/create', [CornellnoteController::class, 'create'])->name('cornellnote.create');
+//CRUD CREADO
+Route::resource('/cornellnote', CornellnoteController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,9 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//para la lista 
+//para la lista
 Route::resource('Users',UserController::class);
 
 
 
 require __DIR__.'/auth.php';
+
