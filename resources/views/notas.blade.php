@@ -13,22 +13,24 @@
     <body>
         <div class="text-2xl text-black mx-auto border-4 border-separate">
             <!--Card mensaje inicio-->
-            <div class="w-1/4 pb-4 mx-auto px-5 my-10 border-4 border-indigo-50  bg-white rounded-sm">
+            <div class="w-1/4 pb-4 mx-auto px-5 my-10    rounded-sm">
                 <!-- Información -->
-                <div class="w-full mt-4 bg-lime-100  rounded-md">
-                    <h1 class="text-2xl  text-center font-bold  text-black">Tus notas son</h1>
+                <div class="w-full mt-4 bg-zinc-100  rounded-md">
+                <span class="box-decoration-clone bg-gradient-to-r from-sky-600 to-pink-600 text-white px-2 ...">
+                     Estas son tus notas
+                </span>
                 </div>
             </div>
-            <button onclick="myFunction()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar nota</button>
+            <button onclick="myFunction()" class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-1 px-2 rounded">Agrega la nota que quieras que vean.</button>
             <form action="{{route('cornellnote.create')}}" method="POST"  id="addnote" style="display:none;">
                 {{ csrf_field() }}
-                <label for="asignatura">Seleccione una asignatura</label>
+                <label for="asignatura">Selecciona la asignatura</label>
                 <select id="asignatura" name="id">
                     @foreach ($asignaturas as $asignatura)
                     <option value="{{ $asignatura->id }}">{{ $asignatura->nombre }}</option>
                     @endforeach
                 </select>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-1 px-2 rounded">
                 Añadir nota
                 </button>
             </form>
@@ -43,7 +45,7 @@
                                 Tema
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Palabra Clave
+                                Tu idea
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Acciones
@@ -63,7 +65,7 @@
                                 {{$nta->ideas}}
                             </td>
                             <td class="px-6 ">
-                                <a href="{{route('cornellnote.show',$nta->id)}}" class="font-medium  hover:underline"><svg class="h-8 w-8 text-green-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <a href="{{route('cornellnote.show',$nta->id)}}" class="font-medium  hover:underline"><svg class="h-8 w-8 text-cyan-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                                     </svg>

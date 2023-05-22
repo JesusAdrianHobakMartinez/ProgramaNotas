@@ -1,6 +1,6 @@
 <x-app-layout>
 <div class="w-full max-w-xs mx-auto">
-    <a href="{{route('notas')}}" ><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+    <a href="{{route('notas')}}" ><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
         Cancelar
       </button></a>
   <form action="{{route('cornellnote.update',$nota->id)}}" method="POST" role="form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
@@ -46,7 +46,7 @@
     </div>
 
     <div class="flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Actualizar nota
       </button>
     </div>
